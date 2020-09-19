@@ -2,6 +2,12 @@ import math
 
 
 def get_x(a: float, b: float, c: float):
+    if a == 0 and b != 0:
+        return [-c / b]
+    if a == 0 and b == 0:
+        return []
+    if a == 0 and b == 0 and c == 0:
+        return ['любое число']
     d = b ** 2 - 4 * a * c
     if d < 0:
         return []
@@ -26,4 +32,3 @@ if __name__ == "__main__":
         print('X =', result[0])
     else:
         print('X1 =', result[0], 'X2 =', result[1])
-

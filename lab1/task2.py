@@ -11,10 +11,11 @@ if __name__ == "__main__":
     elif y == 0:
         print('Лежит на оси абсцисс')
     else:
-        if x > 0 and y > 0:
-            print('I четверть')
-        elif x < 0 and y > 0:
-            print('II четверть')
+        if y > 0:
+            if x > 0:
+                print('I четверть')
+            else:
+                print('II четверть')
         elif x < 0:
             print('III четверть')
         else:
