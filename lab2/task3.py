@@ -2,7 +2,7 @@ import re
 
 
 def inset_with_regex(input: str):
-    return re.sub(r'(.)\1*', '*', input)
+    return re.sub(r'(.)\1*(?!$)', '\g<0>*', input)
 
 def inset_without_regex(input: str):
     result = ''
