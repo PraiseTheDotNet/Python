@@ -20,6 +20,8 @@ def calc_without_regex(input: str):
 
 
 if __name__ == '__main__':
-    input = '512 + 242342 --324234 ...32435 34343 2257'
+    input = '-512 517'
+    print('С регексом:')
     print(calc_with_regex(input))
+    print('Без регекса:')
     print(calc_without_regex(input))

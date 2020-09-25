@@ -21,6 +21,8 @@ def replace_without_regex(input: str):
     return result
 
 if __name__ == '__main__':
-    input = 'ааа(а(а)а()а)ббб(ввв)ввв(ггг)ггг'
+    input = '9(е(е()))9((()))9'
+    print('С регексом:')
     print(replace_with_regex(input))
+    print('Без регекса:')
     print(replace_without_regex(input))

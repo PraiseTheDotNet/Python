@@ -13,9 +13,11 @@ if __name__ == '__main__':
     text = 'тестовый текст текст текст'
     # print('Введите строку для вставки')
     # insert_str = input()
-    insert_str = ' mS'
+    insert_str = '*_*'
     #print('Введите букву')
     #letter = input()[0]
     letter = 'т'
+    print('Без регекса:')
     print(insert_without_regex(text, insert_str, letter))
+    print('C регексом:')
     print(insert_with_regex(text, insert_str, letter))

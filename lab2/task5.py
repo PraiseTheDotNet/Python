@@ -15,5 +15,7 @@ if __name__ == '__main__':
     # Преобразуем результат в строку
     ds = str(d1)
     input = str(d1)
+    print('С регексом:')
     print(format_with_regex(input))
+    print('Без регекса:')
     print(format_without_regex(input))

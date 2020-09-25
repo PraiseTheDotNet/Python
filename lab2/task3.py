@@ -18,8 +18,9 @@ def inset_without_regex(input: str):
 if __name__ == '__main__':
     input = 'ппрол'
     input_2 = 'ееннне'
+    print('С регексом:')
     print(inset_with_regex(input))
-    print(inset_without_regex(input))
-
     print(inset_with_regex(input_2))
+    print('Без регекса:')
+    print(inset_without_regex(input))
     print(inset_without_regex(input_2))

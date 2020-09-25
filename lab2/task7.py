@@ -1,10 +1,9 @@
 import re
-from datetime import date
 
 
 def format_with_regex(input: str):
     result = input
-    result = re.sub(r'(?P<space>[-\(\{\[])', r' \g<space> ', result)
+    result = re.sub(r'(?P<space>[-—\(\{\[.,!?:;\)\]\}])', r' \g<space> ', result)
     result = re.sub(r'\s+', r' ', result)
     result = re.sub(r'(\s(?=[.,!?:;\)\]\}]))|((?<=[\(\{\[])\s+)', r'', result)
     return result
@@ -17,7 +16,7 @@ def format_without_regex(input: str):
     last = ''
     for s in input:
         if not s.isspace():
-            if s == '-':
+            if s in ['-', '—']:
                 if len(word):
                     word_list.append(word)
                     word = ''
@@ -31,7 +30,7 @@ def format_without_regex(input: str):
                     word_list.append(word)
                 word = s
                 space = False
-            elif s in ['(', '[', '{'] :
+            elif s in ['(', '[', '{']:
                 if len(word):
                     word_list.append(word)
                 word = s
@@ -53,7 +52,7 @@ def format_without_regex(input: str):
     return ' '.join(word_list)
 
 if __name__ == '__main__':
-    input = "Ехал ли грека ? Ехал  грека  через реку , видит грека-в реке рак . Сунул ( грека ) руку в [ реку   ], рак {   за} руку греку - (цап)!  цап цап цап . . . "
+    input = "Ехал грека через реку ,видит грека— в реке рак .Сунул грека( рр )руку в реку :рак за руку греку — цап   !  цап цап цап.   .  ."
     print('Входные данные:')
     print(input)
     print('Регекс:')
