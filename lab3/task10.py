@@ -1,15 +1,16 @@
 def can_calc_number(arr, number):
-    sum = number
-    for x in arr:
-        if sum % x == 0:
-            while sum > 0 and sum % x == 0:
-                sum -= x
-    return sum == 0
+    for i in range(len(arr)):
+        for j in range(i + 1, len(arr) + 1):
+            current_sum = sum(arr[i:j])
+            if current_sum == number:
+                return True
+
+    return False
 
 
 if __name__ == '__main__':
     arr = [2, 3, 4, 7, 9]
-    number = 85
+    number = 4
     if can_calc_number(arr, number):
         print('Можно')
     else:
