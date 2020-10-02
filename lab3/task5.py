@@ -12,7 +12,7 @@ def get_sum_of_parents(data :list):
     return res
 
 if __name__ == '__main__':
-    input = '1 3 5 6 10'
+    input = '5 6'
     data = get_list_of_numbers(input)
     print(input)
     print(' '.join([str(x) for x in get_sum_of_parents(data)]))

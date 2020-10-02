@@ -6,15 +6,19 @@ if __name__ == '__main__':
     print('Исходный массив:', input)
     data = []
     start = 0
-    for i in range(1, len(input)):
-        if input[i] < input[i - 1]:
+    for i in range(1, len(input) + 1):
+        if i == len(input) or input[i] < input[i - 1]:
             part = input[start:i]
-            data.append(part)
+            if len(data) != 0:
+                if len(data[0]) < len(part):
+                    data.clear()
+                    data.append(part)
+                elif len(data[0]) == len(part):
+                    data.append(part)
+            else:
+                data.append(part)
             start = i
-    data.append(input[start:])
-    print('Последовательности:', data)
-    data.sort(key=len, reverse=True)
-    max_length = len(max(data, key=len))
-    max_sequence = [x for x in data if len(x) == max_length]
+
+    max_length = len(data[0])
     print('Максимальная длина последовательности:', max_length)
-    print('Последовательност(ь|и):', max_sequence)
+    print('Последовательност(ь|и):', data)
