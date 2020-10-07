@@ -1,0 +1,8 @@
+Intel Core i7 10700k - 32000
+AMD Ryzen 7 4700x - 30000
+Nvidia GeForce RTX 3080 - 126000
+AMD RX Vega 7 - 22000
+Samsung SATA SSD 860 EVO 512 GB - 6000
+G.Skill DDR4 32 GB - 19000
+Intel Xeon - 100000
+Season Prime Gold 850 W - 19000

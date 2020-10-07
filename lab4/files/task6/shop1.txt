@@ -1,0 +1,5 @@
+Intel Core i7 10700k - 29000
+AMD Ryzen 7 4700x - 30000
+Nvidia GeForce RTX 3080 - 63000
+AMD RX Vega 7 - 22000
+Samsung SATA SSD 860 EVO 512 GB - 6000
