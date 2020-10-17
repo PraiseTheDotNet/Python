@@ -4,7 +4,7 @@ import time
 
 
 if __name__ == '__main__':
-    dir = 'D:\Downloads'
+    dir = 'C:\\Users\\alanw\\Downloads'
     files = [file for file in listdir(dir) if isfile(join(dir, file))]
     for file in files:
         date_time = time.strptime(time.ctime(getctime(join(dir,file))))

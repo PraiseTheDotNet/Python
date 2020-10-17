@@ -17,10 +17,12 @@ if __name__ == '__main__':
             elif splitext(element)[1] == '.txt':
                 filePath = join(current, element)
                 f = open(filePath, 'r', encoding="utf-8")
-                lines = len(f.read().splitlines())
+                lines = f.read().splitlines()
                 f.close()
                 f = open(join(create, element), 'w', encoding="utf-8")
-                f.write(str(lines) + '\n')
+                f.write(str(len(lines)) + '\n')
+                for l in lines:
+                    f.write(l + '\n')
                 f.write(str(lvl))
                 f.close()
     print('Копирование структуры завершено')
