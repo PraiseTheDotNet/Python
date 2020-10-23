@@ -8,6 +8,7 @@ def remove_min(arr):
         j = 0
         while j < arr.shape[1]:  # кол-во столбцов
             if arr[i, j] == min:
+                print('(', i, ',', j, ') =', i)
                 arr = np.delete(arr, i, 0)  # строка
                 arr = np.delete(arr, j, 1)  # столбец
                 i -= 1
