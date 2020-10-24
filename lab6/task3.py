@@ -5,8 +5,29 @@ if __name__ == '__main__':
     f = open(path, 'r', encoding="utf-8")
     data = f.read().splitlines()
     f.close()
-    precipitation = {}
+    months = []
+    precipitations = []
     for line in data:
         info = line.split(' ')
-        precipitation[info[0]] = int(info[1])
-    print(precipitation)
+        months.append(info[0])
+        precipitations.append(int(info[1]))
+
+    plt.figure(figsize=(24, 8))
+
+    plt.subplot(221)
+    plt.bar(months, precipitations)
+    plt.grid(True)
+
+    plt.subplot(222)
+    plt.plot(months, precipitations)
+    plt.grid(True)
+
+    plt.subplot(223)
+    plt.barh(months, precipitations)
+    plt.grid(True)
+
+    plt.subplot(224)
+    plt.pie(precipitations, labels=months)
+    plt.grid(True)
+
+    plt.savefig('files/Precipitations.png')
